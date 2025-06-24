@@ -2,9 +2,11 @@ import { useState } from 'react';
 
 function TotalTipAmount() {
   return (
-    <div>
-      <p>You have to pay $0 ($0 + $0 tip)</p>
-    </div>
+    // <div className="total-tip-amount">
+    <p className="total-tip-amount">
+      You have to pay $0 <span>($0 + $0 tip)</span>
+    </p>
+    // </div>
   );
 }
 
