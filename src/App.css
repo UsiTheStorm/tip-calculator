@@ -1,6 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
+
   padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', sans-serif;
+  background-color: #f0f0f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.App {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   text-align: center;
+}
+
+.App > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 8px;
+}
+
+.label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #5d3fd3;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 18px;
+  border: 2px solid #5d3fd3;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #250633;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #8a2be2;
+  box-shadow: 0 0 0 3px rgba(93, 63, 211, 0.2);
+}
+
+.input::placeholder {
+  color: #bbb;
+}
+
+.total-tip-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #8a2be2;
+  margin-top: 15px;
+}
+
+.total-tip-amount::before {
+  content: '';
+  margin: 0 auto;
+  display: block;
+  width: 80%;
+  height: 2px;
+  background-color: #8a2be2;
+}
+
+.total-tip-amount span {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5d3fd3;
+}
+
+.reset {
+  background-color: #5d3fd3;
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+  align-self: center;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+.reset:hover {
+  background-color: #8a2be2;
+}
+
+.reset:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 0;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .total-tip-amount {
+    gap: 3px;
+  }
+
+  .reset {
+    max-width: 180px;
+  }
 }
