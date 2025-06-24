@@ -91,14 +91,14 @@ body {
   display: block;
   width: 80%;
   height: 2px;
-  background-color: #8a2be2;
+  background-color: #fdc10b;
 }
 
 .total-tip-amount span {
   display: block;
   font-size: 1rem;
   font-weight: 500;
-  color: #5d3fd3;
+  color: #fdc10b;
 }
 
 .reset {
@@ -120,7 +120,7 @@ body {
 }
 
 .reset:hover {
-  background-color: #8a2be2;
+  background-color: #fdc10b;
 }
 
 .reset:active {
