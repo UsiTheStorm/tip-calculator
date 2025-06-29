@@ -1,12 +1,14 @@
-import { useState } from 'react';
-
-function TotalTipAmount() {
+function TotalTipAmount({ bill, frService, myService }) {
+  const billAmount = bill;
+  const service = (myService + frService) / 2;
+  const tip = Number((billAmount * service).toFixed(2));
   return (
-    // <div className="total-tip-amount">
     <p className="total-tip-amount">
-      You have to pay $0 <span>($0 + $0 tip)</span>
+      You have to pay ${billAmount + tip}
+      <span>
+        (Bill: ${bill ? billAmount : '0'} + Tips: ${tip})
+      </span>
     </p>
-    // </div>
   );
 }
 
