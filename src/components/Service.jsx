@@ -1,16 +1,26 @@
 import { useState } from 'react';
+import React from 'react';
 
-function Service() {
+function Service({ onServiceQuality, serviceId, children, service }) {
   return (
     <div>
       <label htmlFor="service" className="label">
-        How was the service?
+        {children}
       </label>
-      <select select id="service" className="input" name="service">
+      <select
+        id={serviceId}
+        className="input"
+        name="service"
+        value={service}
+        onChange={(e) => onServiceQuality(e.target.value)}
+      >
+        <option value="0" disabled>
+          Select
+        </option>
         <option value="0">Dissatisfied(0%)</option>
-        <option value="5">It was okay(5%)</option>
-        <option value="10">It was good(10%)</option>
-        <option value="20">Mucho gusto!(20%)</option>
+        <option value="0.05">It was okay(5%)</option>
+        <option value="0.1">It was good(10%)</option>
+        <option value="0.2">Mucho gusto!(20%)</option>
       </select>
     </div>
   );
