@@ -9,13 +9,12 @@ import Reset from './components/reset';
 
 function App() {
   const [bill, setBill] = useState('');
-  const [myServiceQuality, setMyServiceQuality] = useState('0');
-  // const [friendQnt, setFriendQnt] = useState(0);
-  // const [friendService, addFriendService] = useState([]);
+  const [myServiceQuality, setMyServiceQuality] = useState('');
+
   const [friendServiceQualitys, setFriendServiceQualitys] = useState([]);
 
   function handleBill(bl) {
-    setBill(Number(bl));
+    setBill(bl);
   }
 
   function handleMyServiceQuality(q) {
@@ -25,20 +24,12 @@ function App() {
   // Add friend to array
   function addFriend() {
     if (friendServiceQualitys.length < 3) {
-      setFriendServiceQualitys((friends) => [...friends, '0']);
+      setFriendServiceQualitys((friends) => [...friends, '']);
       console.log(friendServiceQualitys);
     } else {
-      alert('You can`t add more than 6 friends');
+      alert('You can`t add more than 3 friends');
     }
   }
-
-  // function handleAddFriendService() {
-  //   addFriendService((prev) => [...prev, '']);
-  // }
-
-  // function handleFriendServiceQualitys(q) {
-  //   setFriendServiceQualitys(Number(q));
-  // }
 
   function handleFriendServiceQualityChange(index, value) {
     setFriendServiceQualitys((prev) => {
@@ -54,7 +45,6 @@ function App() {
     );
   }
 
-  // console.log(typeof bill, typeof myServiceQuality, typeof friendServiceQuality);
   function handleReset() {
     setBill('');
     setMyServiceQuality('0');
@@ -72,7 +62,17 @@ function App() {
         How did you like?
       </Service>
 
-      <button className="btn add-friend" onClick={addFriend}>
+      <button
+        className="btn add-friend"
+        onClick={addFriend}
+        disabled={
+          friendServiceQualitys.length >= 3 ||
+          !Number(bill) ||
+          myServiceQuality === '' ||
+          myServiceQuality === '0' ||
+          friendServiceQualitys.some((q) => q === '' || q === '0')
+        }
+      >
         Add a friend
       </button>
       {/* className={friendServiceQualitys.length > 1 && 'friends-container1'} */}
@@ -92,13 +92,6 @@ function App() {
           </div>
         ))}
       </div>
-      {/* <Service
-        service={friendServiceQuality}
-        onServiceQuality={handleFriendServiceQuality}
-        serviceId="friend#1-service"
-      >
-        How did friend like?
-      </Service> */}
 
       <TotalTipAmount bill={bill} frService={friendServiceQualitys} myService={myServiceQuality} />
 

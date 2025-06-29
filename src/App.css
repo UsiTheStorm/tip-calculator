@@ -127,9 +127,16 @@ body {
   transform: translateY(1px);
 }
 
+.add-friend:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.add-friend:disabled:hover {
+  background-color: #5d3fd3;
+}
 .friends-container {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
   gap: 20px;
   margin-top: 20px;
 
