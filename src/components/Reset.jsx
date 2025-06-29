@@ -1,6 +1,6 @@
 function Reset({ onReset }) {
   return (
-    <button className="reset" onClick={onReset}>
+    <button className="btn" onClick={onReset}>
       Reset
     </button>
   );

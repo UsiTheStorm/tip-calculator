@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function Bill({ onSetBill, bill }) {
   return (
-    <div>
+    <div className="form-group">
       <label htmlFor="bill" className="label">
         How much was your bill?
       </label>

@@ -39,7 +39,7 @@ body {
   text-align: center;
 }
 
-.App > div {
+.form-group {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -101,7 +101,7 @@ body {
   color: #fdc10b;
 }
 
-.reset {
+.btn {
   background-color: #5d3fd3;
   color: #ffffff;
   padding: 12px 25px;
@@ -119,12 +119,54 @@ body {
   margin-top: 10px;
 }
 
-.reset:hover {
+.btn:hover {
   background-color: #fdc10b;
 }
 
-.reset:active {
+.btn:active {
   transform: translateY(1px);
+}
+
+.friends-container {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+  gap: 20px;
+  margin-top: 20px;
+
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.friend-service-item {
+  position: relative;
+
+  margin-bottom: 0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  gap: 20px;
+}
+
+.remove-friend-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fdc00bc7;
+  color: #ffffff;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
 }
 
 @media (max-width: 768px) {
@@ -140,7 +182,7 @@ body {
     gap: 3px;
   }
 
-  .reset {
+  .btn {
     max-width: 180px;
   }
 }

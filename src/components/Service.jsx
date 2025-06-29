@@ -3,7 +3,7 @@ import React from 'react';
 
 function Service({ onServiceQuality, serviceId, children, service }) {
   return (
-    <div>
+    <div className="form-group">
       <label htmlFor="service" className="label">
         {children}
       </label>
