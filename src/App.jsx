@@ -5,7 +5,7 @@ import './App.css';
 import Bill from './components/Bill';
 import Service from './components/Service';
 import TotalTipAmount from './components/TotalTipAmount';
-import Reset from './components/reset';
+import Reset from './components/Reset';
 
 function App() {
   const [bill, setBill] = useState('');
