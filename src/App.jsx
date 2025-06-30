@@ -47,7 +47,7 @@ function App() {
 
   function handleReset() {
     setBill('');
-    setMyServiceQuality('0');
+    setMyServiceQuality('');
     setFriendServiceQualitys([]);
   }
 
@@ -93,9 +93,17 @@ function App() {
         ))}
       </div>
 
-      <TotalTipAmount bill={bill} frService={friendServiceQualitys} myService={myServiceQuality} />
+      {bill > 0 && (
+        <>
+          <TotalTipAmount
+            bill={bill}
+            frService={friendServiceQualitys}
+            myService={myServiceQuality}
+          />
 
-      <Reset onReset={handleReset} />
+          <Reset onReset={handleReset} />
+        </>
+      )}
     </div>
   );
 }
